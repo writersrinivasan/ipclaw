@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg: #f6f4ef;
+  --panel: #ffffff;
+  --ink: #1b1a17;
+  --muted: #6b675e;
+  --line: #e4e0d6;
+  --accent: #8b3a1e;
+  --accent-soft: #f4e3da;
+  --ok: #1f6f43;
+  --warn: #9a6a00;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+.prose-ipc h2 { font-size: 0.95rem; font-weight: 700; margin: 1rem 0 0.4rem; color: var(--accent); letter-spacing: 0.01em; }
+.prose-ipc h3 { font-size: 0.9rem; font-weight: 600; margin: 0.8rem 0 0.3rem; }
+.prose-ipc p { margin: 0.4rem 0; line-height: 1.55; }
+.prose-ipc ul, .prose-ipc ol { margin: 0.4rem 0 0.4rem 1.2rem; list-style: disc; }
+.prose-ipc ol { list-style: decimal; }
+.prose-ipc li { margin: 0.2rem 0; line-height: 1.5; }
+.prose-ipc strong { font-weight: 650; }
+.prose-ipc table { border-collapse: collapse; width: 100%; font-size: 0.82rem; margin: 0.6rem 0; display: block; overflow-x: auto; }
+.prose-ipc th, .prose-ipc td { border: 1px solid var(--line); padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+.prose-ipc th { background: #faf8f3; font-weight: 600; }
+.prose-ipc blockquote { border-left: 3px solid var(--warn); background: #fff8e6; padding: 0.5rem 0.75rem; margin: 0.6rem 0; border-radius: 4px; }
+.prose-ipc hr { border: 0; border-top: 1px solid var(--line); margin: 0.8rem 0; }
+.prose-ipc em { color: var(--muted); }
+.prose-ipc code { background: #f1efe9; padding: 0.05rem 0.3rem; border-radius: 3px; font-size: 0.85em; }
+
+@keyframes pulse-dot { 0%, 100% { opacity: 0.35 } 50% { opacity: 1 } }
+.dot-pulse { animation: pulse-dot 1s ease-in-out infinite; }
